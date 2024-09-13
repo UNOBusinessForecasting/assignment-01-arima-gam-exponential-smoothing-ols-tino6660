@@ -8,7 +8,7 @@ Titles = ['year','month','day','hour']
 x = data[Titles]
 y = data[['trips']]
 
-model = LinearGAM(s(0) + s(1) + f(2))
+model = LinearGAM(s(0) + s(1) + s(2) + s(3))
 model = model.gridsearch(x.values, y)
 
 modelFit = model.fit(x,y) 

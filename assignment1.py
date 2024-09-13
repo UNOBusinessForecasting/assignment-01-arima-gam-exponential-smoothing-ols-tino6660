@@ -4,10 +4,13 @@ import numpy as np
 
 data = pd.read_csv("https://github.com/dustywhite7/econ8310-assignment1/raw/main/assignment_data_train.csv")
 
-x = data[['month','day','hour']]
+Titles = ['month','day','hour']
+x = data[Titles]
 y = data[['trips']]
 
 model = LinearGAM(s(0) + s(1) + f(2))
 model = model.gridsearch(x.values, y)
 
-modelFit = model.fit(x,y)
+modelFit = model.fit(x,y) 
+
+pred = modelFit.predict(data.loc[3, Titles].values.reshape(1,3))

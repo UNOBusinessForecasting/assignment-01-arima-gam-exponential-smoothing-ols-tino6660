@@ -13,4 +13,4 @@ model = model.gridsearch(x.values, y)
 
 modelFit = model.fit(x,y) 
 
-pred = modelFit.predict(data.loc[3, Titles].values.reshape(1,4))
+pred = modelFit.predict(data.loc[4, Titles].values.reshape(1,4))

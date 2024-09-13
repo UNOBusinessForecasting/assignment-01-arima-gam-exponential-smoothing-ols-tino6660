@@ -10,4 +10,4 @@ y = data[['trips']]
 model = LinearGAM(s(0) + s(1) + f(2))
 model = model.gridsearch(x.values, y)
 
-modelfit = model.fit(x,y)
+modelFit = model.fit(x,y)

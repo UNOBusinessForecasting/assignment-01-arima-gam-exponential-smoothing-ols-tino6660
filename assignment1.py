@@ -4,7 +4,7 @@ import numpy as np
 
 data = pd.read_csv("https://github.com/dustywhite7/econ8310-assignment1/raw/main/assignment_data_train.csv")
 
-Titles = ['month','day','hour']
+Titles = ['year','month','day','hour']
 x = data[Titles]
 y = data[['trips']]
 
@@ -13,4 +13,4 @@ model = model.gridsearch(x.values, y)
 
 modelFit = model.fit(x,y) 
 
-pred = modelFit.predict(data.loc[3, Titles].values.reshape(1,3))
+pred = modelFit.predict(data.loc[3, Titles].values.reshape(1,4))

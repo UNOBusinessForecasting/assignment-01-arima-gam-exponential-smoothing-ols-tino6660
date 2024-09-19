@@ -4,7 +4,7 @@ import numpy as np
 
 data = pd.read_csv("https://github.com/dustywhite7/econ8310-assignment1/raw/main/assignment_data_train.csv")
 
-data['Timestamp']= pd.to_datetime(data['Timestamp'], format = '%d-%m-%Y %H:%M:%S')
+data['Timestamp']= pd.to_datetime(data['Timestamp'], format = 'mixed')
 Titles = ['year','month','day','hour']
 x = data[Titles]
 y = data[['trips']]
@@ -16,7 +16,7 @@ modelFit = model.fit(x,y)
 
 data2 = pd.read_csv("https://github.com/dustywhite7/econ8310-assignment1/raw/main/assignment_data_train.csv")
 
-data2['Timestamp']= pd.to_datetime(data2['Timestamp'], format = '%d-%m-%Y %H:%M:%S')
+data2['Timestamp']= pd.to_datetime(data2['Timestamp'], format = 'mixed')
 
 data2['Trips'] = ""
 

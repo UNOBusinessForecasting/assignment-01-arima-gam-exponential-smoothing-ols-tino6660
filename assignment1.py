@@ -19,8 +19,7 @@ modelFit = model.fit(x,y)
 data2 = pd.read_csv("https://github.com/dustywhite7/econ8310-assignment1/raw/main/assignment_data_train.csv")
 
 data2['Timestamp']= pd.to_numeric(pd.to_datetime(data2['Timestamp']))
-data2_edited = SimpleExpSmoothing(data2).fit()
-data2_edited['trips'] = ""
+data2['trips'] = ""
 
 
-pred = modelFit.predict(data2_edited)
+pred = modelFit.predict(data2)

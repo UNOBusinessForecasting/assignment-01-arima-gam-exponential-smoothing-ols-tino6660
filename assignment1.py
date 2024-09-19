@@ -21,4 +21,4 @@ data2['Timestamp']= pd.to_numeric(pd.to_datetime(data2['Timestamp']))
 data2['trips'] = data['trips'].astype(float)
 
 
-pred = modelFit.predict(data2['year', 'month', 'day', 'hour'])
+pred = modelFit.predict(data2[['year', 'month', 'day', 'hour']])

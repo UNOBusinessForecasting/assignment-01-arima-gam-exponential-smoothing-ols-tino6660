@@ -8,11 +8,11 @@ data = pd.read_csv("https://github.com/dustywhite7/econ8310-assignment1/raw/main
 
 data['Timestamp']= pd.to_numeric(pd.to_datetime(data['Timestamp']))
 data_edited = SimpleExpSmoothing(data).fit()
-eqn = """trips ~ -1 + year + month + day + hour """
-y, x = pt.dmatrices(eqn, data=data_edited)
+x = data_edited[['year','month','day','hour']]
+y = data_edited['trips']
 
 model = LinearGAM(s(0) + f(1) + f(2) + f(3))
-model = model.gridsearch(np.asarray(x), y)
+model = model.gridsearch(x.values, y)
 
 modelFit = model.fit(x,y)
 

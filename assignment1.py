@@ -6,8 +6,8 @@ data = pd.read_csv("https://github.com/dustywhite7/econ8310-assignment1/raw/main
 
 data['Timestamp']= pd.to_numeric(pd.to_datetime(data['Timestamp']))
 Titles = ['year','month','day','hour']
-x = list(data[Titles])
-y = list(data[['trips']])
+x = data[['year'], ['month'], ['day'], ['hour']]
+y = data[['trips']]
 
 model = LinearGAM(s(0) + s(1) + s(2) + s(3))
 model = model.gridsearch(x.values, y)

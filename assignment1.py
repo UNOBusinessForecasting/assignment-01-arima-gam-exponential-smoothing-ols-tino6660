@@ -15,7 +15,7 @@ model = model.gridsearch(x.values, y)
 
 modelFit = model.fit(x,y)
 
-data2 = pd.read_csv("https://github.com/dustywhite7/econ8310-assignment1/raw/main/assignment_data_train.csv")
+data2 = pd.read_csv("https://github.com/dustywhite7/econ8310-assignment1/raw/main/assignment_data_test.csv")
 
 data2['Timestamp']= pd.to_numeric(pd.to_datetime(data2['Timestamp']))
 data2['trips'] = ""

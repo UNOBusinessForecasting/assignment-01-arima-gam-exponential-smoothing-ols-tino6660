@@ -4,7 +4,7 @@ import numpy as np
 
 data = pd.read_csv("https://github.com/dustywhite7/econ8310-assignment1/raw/main/assignment_data_train.csv")
 
-model = smf.ols("trips ~ year + month + day + hour", data=data)
+model = smf.ols("trips ~ month + day + hour", data=data)
 modelFit = model.fit() 
 
 data2 = [['1-1-2019 0:00', 1, 1, 0, ], ['1-1-2019 1:00', 1, 1, 1, ], ['1-1-2019 2:00', 1, 1, 2, ], ['1-1-2019 3:00', 1, 1,	3, ], ['1-1-2019 4:00', 1, 1, 4, ], ['1-1-2019 5:00', 1, 1,	5, ],

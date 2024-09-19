@@ -5,10 +5,10 @@ import numpy as np
 data = pd.read_csv("https://github.com/dustywhite7/econ8310-assignment1/raw/main/assignment_data_train.csv")
 
 data['Timestamp']= pd.to_numeric(pd.to_datetime(data['Timestamp']))
-x = data[['year', 'month', 'day', 'hour']]
+x = data[['Timestamp', 'year', 'month', 'day', 'hour']]
 y = data[['trips']]
 
-model = LinearGAM(s(0) + s(1) + s(2) + s(3))
+model = LinearGAM(s(0) + s(1) + s(2) + s(3) + s(4))
 model = model.gridsearch(x.values, y)
 
 modelFit = model.fit(x,y)

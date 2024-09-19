@@ -5,7 +5,7 @@ import numpy as np
 data = pd.read_csv("https://github.com/dustywhite7/econ8310-assignment1/raw/main/assignment_data_train.csv")
 
 data['Timestamp']= pd.to_numeric(pd.to_datetime(data['Timestamp']))
-x = data['year', 'month', 'day', 'hour']
+x = data[['year', 'month', 'day', 'hour']]
 y = data['trips']
 
 model = LinearGAM(s(0) + f(1) + f(2) + f(3))

@@ -9,6 +9,6 @@ modelFit = model.fit()
 
 data2 = pd.read_csv("https://github.com/dustywhite7/econ8310-assignment1/raw/main/assignment_data_train.csv")
 
-df = pd.DataFrame(data2, columns=['Timestamp', 'month', 'day', 'hour', 'trips'])
+data2 = df.insert(5, "Trips")
 
 pred = modelFit.predict(data2)

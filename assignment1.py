@@ -9,10 +9,9 @@ data = pd.read_csv("https://github.com/dustywhite7/econ8310-assignment1/raw/main
 data['Timestamp']= pd.to_numeric(pd.to_datetime(data['Timestamp']))
 x = data[['year','month','day','hour']]
 y = data['trips']
-x1 = SimpleExpSmoothing(x).fit()
 
 model = LinearGAM(s(0) + f(1) + f(2) + f(3))
-model = model.gridsearch(x1.values, y)
+model = model.gridsearch(x.values, y)
 
 modelFit = model.fit(x,y)
 

@@ -8,7 +8,7 @@ data['Timestamp']= pd.to_numeric(pd.to_datetime(data['Timestamp']))
 x = data[['year', 'month', 'day', 'hour']]
 y = data[['trips']]
 
-model = LinearGAM(s(0) + s(1) + s(2) + s(3))
+model = LinearGAM(s(0) + f(1) + f(2) + f(3))
 model = model.gridsearch(x.values, y)
 
 modelFit = model.fit(x,y)
